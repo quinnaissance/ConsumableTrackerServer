@@ -1,0 +1,25 @@
+# Check status
+curl -X GET localhost:8080/ping
+
+# Add an item
+curl -H "Content-Type: application/json" -X POST -d "" localhost:8080/addItem
+curl -H "Content-Type: application/json" -X POST -d "{\"weight\":1.62,\"name\":\"Banana\",\"notes\":\"\",\"price\":1.04,\"expiryDate\":\"2021-11-02\"}" localhost:8080/addItem
+
+# Remove item
+curl -H "Content-Type: application/json" -X POST -d "" localhost:8080/removeItem
+curl -H "Content-Type: application/json" -X POST -d "{\"weight\":1.62,\"name\":\"Banana\",\"notes\":\"\",\"price\":1.04,\"expiryDate\":\"2021-11-02\"}" localhost:8080/removeItem
+
+# List all items
+curl -X GET localhost:8080/listAll
+
+# List expired items
+curl -X GET localhost:8080/listExpired
+
+# List non-expired items
+curl -X GET localhost:8080/listNonExpired
+
+# List items expiring within 7 days
+curl -X GET localhost:8080/listExpiringIn7Days
+
+# Exit
+curl -X GET localhost:8080/exit
